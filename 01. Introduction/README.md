@@ -78,6 +78,14 @@
 	- The compilation time must be kept reasonable, and
 	- The engineering effort required must be manageable.
 ## 1.5. Applications of Compiler Technology
-
+- Implementation of High-Level Programming Languages
+	- A high-level programming language defines a programming abstraction: the programmer expresses an algorithm using the language, and the compiler must translate that program to the target language.
+- Optimizations for Computer Architectures
+	- Almost all high-performance systems take advantage of the same two basic techniques: parallelism and memory hierarchies.
+- Design of New Computer Architectures
+	- in modern computer architecture development, compilers are developed in the processor-design stage, and compiled code, running on simulators, is used to evaluate the proposed architectural features.
+- Program Translations
+	- While we normally think of compiling as a translation from a high-level language to the machine level, the same technology can be applied to translate between different kinds of languages.
+- Software Productivity Tools.
 ## 1.6. Programming Languages Basics
 ### Exercises for Section 1.6
