@@ -32,7 +32,31 @@
 - Describe some of the tasks that an assembler needs to perform.
 	- The assembly language is processed by a program called an assembler that produces relocatable machine code as its output.
 ## 1.2. The Strucutre of a Compiler
-
+- The analysis part breaks up the source program into constituent pieces and imposes a grammatical structure on them.
+- The synthesis part constructs the desired target program from the intermediate representation and the information in the symbol table.
+- The first phase of a compiler is called lexical analysis or scanning.
+	- The lexical analyzer reads the stream of characters making up the source program and groups the characters into meaningful sequences called lexemes.
+	- For each lexeme, the lexical analyzer produces as output a token of the form `<token-name; attribute-value>` that it passes on to the subsequent phase, syntax analysis.
+- The second phase of the compiler is syntax analysis or parsing.
+	- The parser uses the first components of the tokens produced by the lexical analyzer to create a tree-like intermediate representation that depicts the grammatical structure of the token stream.
+	- A typical representation is a syntax tree in which each interior node represents an operation and the children of the node represent the arguments of the operation.
+- The semantic analyzer uses the syntax tree and the information in the symbol table to check the source program for semantic consistency with the language defnition.
+	- An important part of semantic analysis is type checking, where the compiler checks that each operator has matching operands.
+- After syntax and semantic analysis of the source program, many compilers generate an explicit low-level or machine-like intermediate representation, which we can think of as a program for an abstract machine.
+	- This intermediate representation should have two important properties: it should be easy to produce and it should be easy to translate into the target machine.
+- The machine-independent code-optimization phase attempts to improve the intermediate code so that better target code will result.
+- The code generator takes as input an intermediate representation of the source program and maps it into the target language.
+- Symbol table is an essential function of a compiler is to record the variable names used in the source program and collect information about various attributes of each name.
+	- The symbol table is a data structure containing a record for each variable name, with fields for the attributes of the name.
+	- The data structure should be designed to allow the compiler to find the record for each name quickly and to store or retrieve data from that record quickly.
+- In an implementation, activities from several phases may be grouped together into a pass that reads an input file and writes an output file.
+- Some commonly used compiler-construction tools include:
+	- Parser generators that automatically produce syntax analyzers from a grammatical description of a programming language.
+	- Scanner generators that produce lexical analyzers from a regular-expression description of the tokens of a language.
+	- Syntax-directed translation engines that produce collections of routines for walking a parse tree and generating intermediate code.
+	- Code-generator generators that produce a code generator from a collection of rules for translating each operation of the intermediate language into the machine language for a target machine.
+	- Data-flow analysis engines that facilitate the gathering of information about how values are transmitted from one part of a program to each other part. Data-ow analysis is a key part of code optimization.
+	- Compiler-construction toolkits that provide an integrated set of routines for constructing various phases of a compiler.
 ## 1.3. The Evolution of Programming Languages
 ### Exercises for Section 1.3
 
