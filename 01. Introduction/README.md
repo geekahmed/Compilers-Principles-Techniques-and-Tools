@@ -69,7 +69,14 @@
 	- von Neumann: Fortan and C
 
 ## 1.4. The Science of Building a Compiler
-
+- Compiler design is full of beautiful examples where complicated real-world problems are solved by abstracting the essence of the problem mathematically.
+	- These serve as excellent illustrations of how abstractions can be used to solve problems: take a problem, formulate a mathematical abstraction that captures the key characteristics, and solve it using mathematical techniques.
+- The study of compilers is mainly a study of how we design the right mathematical models and choose the right algorithms, while balancing the need for generality and power against simplicity and efficiency.
+- Compiler optimizations must meet the following design objectives:
+	- The optimization must be correct, that is, preserve the meaning of the compiled program,
+	- The optimization must improve the performance of many programs,
+	- The compilation time must be kept reasonable, and
+	- The engineering effort required must be manageable.
 ## 1.5. Applications of Compiler Technology
 
 ## 1.6. Programming Languages Basics
