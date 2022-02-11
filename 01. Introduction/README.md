@@ -58,7 +58,15 @@
 	- Data-flow analysis engines that facilitate the gathering of information about how values are transmitted from one part of a program to each other part. Data-ow analysis is a key part of code optimization.
 	- Compiler-construction toolkits that provide an integrated set of routines for constructing various phases of a compiler.
 ## 1.3. The Evolution of Programming Languages
+- History is better read from the source.
 ### Exercises for Section 1.3
+- Indicate which of the following terms: a) imperative b) declarative c) von Neumann d) ob ject-oriented e) functional f ) third-generation g) fourth-generation h) scripting apply to which of the following languages: 1) C 2) C++ 3) Cobol 4) Fortran 5) Java 6) Lisp 7) ML 8) Perl 9) Python 10) VB.
+	- imperative: C, C++
+	- object-oriented: C++, Java
+	- functional: ML
+	- scripting: Perl, Python
+	- third-generation: C, C++, Fortran, Lisp, and Java.
+	- von Neumann: Fortan and C
 
 ## 1.4. The Science of Building a Compiler
 
