@@ -88,4 +88,129 @@
 	- While we normally think of compiling as a translation from a high-level language to the machine level, the same technology can be applied to translate between different kinds of languages.
 - Software Productivity Tools.
 ## 1.6. Programming Languages Basics
+- The Static/Dynamic Distinction
+	- If a language uses a policy that allows the compiler to decide an issue, then we say that the language uses a static policy or that the issue can be decided at compile time.
+	- A policy that only allows a decision to be made when we execute the program is said to be a dynamic policy or to require a decision at run time.
+	- The scope of a declaration of x is the region of the program in which uses of x refer to this declaration.
+		- A language uses static scope or lexical scope if it is possible to determine the scope of a declaration by looking only at the program.
+		- Otherwise, the language uses dynamic scope. With dynamic scope, as the program runs, the same use of x could refer to any of several different declarations of x.
+- Environments and States
+	- The environment is a mapping from names to locations in the store.
+	- The state is a mapping from locations in store to their values.
+	- Environments change according to the scope rules of a language.
+	- Static versus dynamic binding of names to locations.
+		- Most binding of names to locations is dynamic.
+	- Static versus dynamic binding of locations to values.
+		- The binding of locations to values is generally dynamic as well, since we cannot tell the value in a location until we run the program.
+		- Declared constants are an exception.
+	- Names, Identifiers, and Variables.
+		- An identifier is a string of characters, typically letters or digits, that refers to (identifies) an entity, such as a data ob ject, a procedure, a class, or a type.
+		- All identifiers are names, but not all names are identifiers.
+		- Names can be expressions.
+			- For example, the name x.y might denote the field y of a structure denoted by x. Here, x and y are identifiers, while x.y is a name, but not an identifier.
+			- Composite names like x:y are called qualified names.
+		- A variable refers to a particular location of the store.
+- Static Scope and Block Structure
+	- A C program consists of a sequence of top-level declarations of variables and functions.
+	- Functions may have variable declarations within them, where variables include local variables and parameters. The scope of each such declaration is restricted to the function in which it appears.
+	- The scope of a top-level declaration of a name x consists of the entire program that follows, with the exception of those statements that lie within a function that also has a declaration of x.
+	- Blocks in a C++ program -> **Image of Blocks in** 
+- Explicit Access Control
+	- Classes and structures introduce a new scope for their members.
+	- If p is an object of a class with a field (member) x, then the use of x in p.x refers to field x in the class definition.
+- Dynamic Scope
+	- The term dynamic scope refers to the following policy: a use of a name x refers to the declaration of x in the most recently called, not-yet-terminated, procedure with such a declaration.
+	- Declarations tell us about the types of things, while definitions tell us about their values. Thus, int i is a declaration of i, while i = 1 is a definition of i.
+	- While there could be any number of static or dynamic policies for scoping, there is an interesting relationship between the normal (block-structured) static scoping rule and the normal dynamic policy.
+		- In a sense, the dynamic rule is to time as the static rule is to space.
+		- While the static rule asks us to find the declaration whose unit (block) most closely surrounds the physical location of the use, the dynamic rule asks us to find the declaration whose unit (procedure invocation) most closely surrounds the time of the use.
+- Parameter Passing Mechanisms
+	- There is three ways for parameter passing, "call-by-value," "call-by-reference," and "call-by-name".
+	- In call-by-value, the actual parameter is evaluated (if it is an expression) or copied (if it is a variable).
+	- In call-by-reference, the address of the actual parameter is passed to the callee as the value of the corresponding formal parameter.
+- Aliasing
+	- It is possible that two formal parameters can refer to the same location; such variables are said to be aliases of one another.
 ### Exercises for Section 1.6
+- For the block-structured C code of the following figure, indicate the values assigned to w, x, y, and z.
+- 
+
+    int w, x, y, z;
+    int i = 4; int j = 5;
+    {
+      int j = 7;
+      i = 6;
+      w = i + j;
+    }
+    x = i + j;
+    {
+      int i = 8;
+      y = i + j;
+    }
+    z = i + j;
+**w = 13, x = 11, y = 13, z = 11.**
+- Repeat Exercise 1.6.1 for the code of the following.
+- 
+
+    int w, x, y, z;
+    int i = 3; int j = 4;
+    {
+      int i = 5;
+      w = i + j;
+    }
+    x = i + j;
+    {
+      int j = 6;
+      i = 7;
+      y = i + j;
+    }
+    z = i + j;
+**w = 9, x = 7, y = 13, z = 11.**
+- For the block-structured code of Fig. 1.14, assuming the usual static scoping of declarations, give the scope for each of the twelve declarations.
+{
+int w, x, y, z; Block B1 
+{ int x, z; Block B2
+{ int w, x; Block B3
+} 
+} 
+{ 
+int w, x; Block B4 
+{int y, z; Block B5 }
+} 
+}
+
+```
+Block B1:
+    declarations:  ->   scope
+        w                B1-B3-B4
+        x                B1-B2-B4
+        y                B1-B5
+        z                B1-B2-B5
+Block B2:
+    declarations:  ->   scope
+        x                B2-B3
+        z                B2
+Block B3:
+    declarations:  ->   scope
+        w                B3
+        x                B3
+Block B4:
+    declarations:  ->   scope
+        w                B4
+        x                B4
+Block B5:
+    declarations:  ->   scope
+        y                B5
+        z                B5
+```
+
+
+- What is printed by the following C code?
+- 
+
+    #define a (x + 1)
+    int x = 2;
+    void b() { x = a; printf("%d\n", x); }
+    void c() { int x = 1; printf("%d\n", a); }
+    void main () { b(); c(); }
+**3
+2**
