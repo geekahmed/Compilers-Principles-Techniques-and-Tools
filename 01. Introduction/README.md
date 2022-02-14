@@ -114,7 +114,8 @@
 	- A C program consists of a sequence of top-level declarations of variables and functions.
 	- Functions may have variable declarations within them, where variables include local variables and parameters. The scope of each such declaration is restricted to the function in which it appears.
 	- The scope of a top-level declaration of a name x consists of the entire program that follows, with the exception of those statements that lie within a function that also has a declaration of x.
-	- Blocks in a C++ program -> **Image of Blocks in** 
+	- Blocks in a C++ program
+	- ![Blocks in c plus plus](https://github.com/geekahmed/Compilers-Principles-Techniques-and-Tools/blob/main/01.%20Introduction/Images/Blocks-in-c.png?raw=true)
 - Explicit Access Control
 	- Classes and structures introduce a new scope for their members.
 	- If p is an object of a class with a field (member) x, then the use of x in p.x refers to field x in the class definition.
@@ -212,5 +213,6 @@ Block B5:
     void b() { x = a; printf("%d\n", x); }
     void c() { int x = 1; printf("%d\n", a); }
     void main () { b(); c(); }
-**3
-2**
+**3**
+
+**2**
