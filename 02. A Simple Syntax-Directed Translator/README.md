@@ -5,7 +5,7 @@
 - The semantics of a programming language defines what its programs mean; that is, what each program does when it executes.
 - Context-free grammars or BNF are widely used notations in specifying the syntax.
 - A model of a compiler front end
-"Image of compiler front end model:
+- ![A model of a compiler front end](https://github.com/geekahmed/Compilers-Principles-Techniques-and-Tools/blob/main/02.%20A%20Simple%20Syntax-Directed%20Translator/Images/Compiler-front-end.png?raw=true)
 - A lexical analyzer allows a translator to handle multicharacter constructs like identifiers, which are written as sequences of characters, but are treated as units called tokens during syntax analysis.
 - There are two forms of intermediate code:
 	- Abstract syntax trees: represent the hierarchical syntactic of the source program.

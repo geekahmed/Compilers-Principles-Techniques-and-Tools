@@ -34,5 +34,5 @@ Ghassan Shobaki: https://www.youtube.com/playlist?list=PL6KMWPQP_DM97Hh0PYNgJord
 Compilers from Stanford (CS143): https://www.youtube.com/playlist?list=PLoCMsyE1cvdUZRe1udlyjpzTww1U5olL2
 
 ## Table of Content
-- [Chapter 1. Introduction](#)
-- [Chapter 2. A Simple Syntax-Directed Translator](#)
+- [Chapter 1. Introduction](https://github.com/geekahmed/Compilers-Principles-Techniques-and-Tools/tree/main/01.%20Introduction)
+- [Chapter 2. A Simple Syntax-Directed Translator](https://github.com/geekahmed/Compilers-Principles-Techniques-and-Tools/tree/main/02.%20A%20Simple%20Syntax-Directed%20Translator)
